@@ -17,7 +17,7 @@ interface LinkButtonProps extends BaseProps {
 
 interface NativeButtonProps
   extends BaseProps,
-    ButtonHTMLAttributes<HTMLButtonElement> {
+    Omit<ButtonHTMLAttributes<HTMLButtonElement>, "children"> {
   href?: undefined;
 }
 
