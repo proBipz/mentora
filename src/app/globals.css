@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand Palette - European Consultancy Aesthetic */
+  --color-primary: #0b1f3a;
+  --color-primary-light: #16335b;
+  --color-primary-dark: #071427;
+
+  --color-secondary: #1d4ed8;
+  --color-secondary-hover: #1e40af;
+
+  --color-accent: #0d9488;
+  --color-accent-soft: #ccfbf1;
+
+  /* Neutrals & Surfaces */
+  --color-surface: #ffffff;
+  --color-bg-subtle: #f8fafc;
+  --color-dark-bg: #0b1f3a;
+
+  --color-text: #0f172a;
+  --color-text-muted: #475569;
+  --color-text-on-dark: #f8fafc;
+
+  --color-border: #e2e8f0;
+  --color-border-strong: #cbd5e1;
+
+  /* Elevation & Shape */
+  --shadow-card: 0 1px 3px 0 rgba(15, 23, 42, 0.06), 0 1px 2px -1px rgba(15, 23, 42, 0.04);
+  --shadow-card-hover: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 4px 10px -6px rgba(15, 23, 42, 0.04);
+  --radius-card: 0.75rem;
+  --radius-btn: 0.5rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-plus-jakarta), var(--font-inter), system-ui, sans-serif;
+    letter-spacing: -0.02em;
+    color: var(--color-primary);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
