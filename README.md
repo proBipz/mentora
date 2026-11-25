@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mentora Serbia
 
-## Getting Started
+Mentora is a Serbia-based consulting and information services website focused on three service pillars: education consultation, IT and software consultancy, and reliable Serbia-related information.
 
-First, run the development server:
+This repository is being delivered in five controlled development steps. Step 1 establishes the architecture, design system, shared layout, responsive navigation, homepage foundation and all required routes.
+
+## Technology stack
+
+- Next.js 16 App Router
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Lucide React icons
+- ESLint with the Next.js configuration
+
+## Local development
+
+Requirements:
+
+- Node.js 20.9 or newer
+- npm 10 or newer
+
+Install dependencies and start the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Commands
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev      # Start the local development server
+npm run lint     # Run ESLint
+npm run build    # Create a production build
+npm run start    # Serve the production build
+```
 
-## Learn More
+## Environment variables
 
-To learn more about Next.js, take a look at the following resources:
+Copy `.env.example` to `.env.local` when configuring a deployment.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Variable | Purpose |
+| --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | Canonical public website URL used by metadata |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+No API keys or credentials should be committed to the repository.
 
-## Deploy on Vercel
+## Project structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```text
+src/
+├── app/                 # App Router pages, root layout and global styles
+├── components/          # Shared brand, header, footer and page components
+└── lib/                 # Site configuration and navigation data
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Routes created in Step 1
+
+- `/`
+- `/education-consultation`
+- `/it-software-consultancy`
+- `/information-services`
+- `/about`
+- `/serbia-guide`
+- `/resources`
+- `/contact`
+- `/book-consultation`
+- `/privacy-policy`
+- `/terms-and-conditions`
+- `/disclaimer`
+- `/cookie-policy`
+- Custom 404 page
+
+## Design system
+
+Brand colors, shadows, typography and spacing tokens are defined as CSS variables in `src/app/globals.css`. The initial text-based brand is isolated in `src/components/brand.tsx` so it can be replaced with a final SVG or image logo later.
+
+## Deployment
+
+The application can be deployed to Vercel or Render after the production environment variable is configured. Detailed platform instructions will be added in Step 5 in `DEPLOYMENT.md`.
+
+## Development roadmap
+
+1. Foundation, brand system and architecture
+2. Core website and complete content
+3. Conversion, resources and business features
+4. SEO, performance, accessibility and security
+5. Final QA, production preparation and deployment
